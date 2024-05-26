@@ -1,4 +1,4 @@
-#O(2N) Approach
+#O(2N) Approach --> This is more efficent method in terms of time and space.
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if len(s) == 0:
@@ -22,3 +22,25 @@ class Solution:
         return count
 
   
+#O(N)
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) == 0:
+            return 0
+        
+        if len(s) == 1:
+            return 1
+
+        dict1 = {}
+        l = r = 0
+        n = len(s)
+        length = 0
+        while r < n:
+            if s[r] in dict1:
+                l = max(l, dict1[s[r]] + 1)
+            
+            dict1[s[r]] = r
+            length = max(length, r - l + 1)
+            r += 1
+
+        return length
