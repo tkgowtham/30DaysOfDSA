@@ -9,7 +9,7 @@ class Solution:
         for i in range(len(A)):
             xr = xr ^ A[i]
             x = xr ^ B
-            count += dict1.get(x, 0)
+            count += dict1.get(x, 0) # get value of x if not there put x with value 0
             dict1[xr] = dict1.get(xr, 0) + 1
         
         return count
