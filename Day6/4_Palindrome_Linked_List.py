@@ -3,6 +3,8 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+#O(2N) O(1) , TC cannot be improved from stack based approach, SC reduced from using stack O(N).
 class Solution:
     def reverse(self, head):
         temp = head
