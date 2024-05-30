@@ -16,10 +16,10 @@ def minimumPlatform(self,n,arr,dep):
         j = 0
         
         while i < n and j < n:
-            if arr[i] <= dep[j]:
+            if arr[i] <= dep[j]: #A train arriving before a train is going to depart
                 platforms_needed += 1
                 i += 1
-            elif arr[i] > dep[j]:
+            elif arr[i] > dep[j]: #Train arrving after a train departs.
                 platforms_needed -= 1
                 j += 1
                 
